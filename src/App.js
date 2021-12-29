@@ -34,6 +34,7 @@ class App extends Component {
   setAlert = (msg, type) => {
     console.log(msg, type);
     this.setState({ alert: { message: msg, type: type } });
+    setTimeout(() => this.setState({ alert: "" }), 4000);
   };
   render() {
     return (

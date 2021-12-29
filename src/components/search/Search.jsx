@@ -9,7 +9,7 @@ export default function Search(props) {
       props.setAlert("please enter something..", "light");
     } else {
       props.userSearch(query);
-      props.setAlert("");
+
       setQuery("");
     }
   };
