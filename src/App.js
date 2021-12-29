@@ -13,14 +13,14 @@ class App extends Component {
     loading: false,
     alert: "",
   };
-  async componentDidMount() {
-    this.setState({ loading: true });
-    const resp = await axios.get(
-      `https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-    );
+  // async componentDidMount() {
+  //   this.setState({ loading: true });
+  //   const resp = await axios.get(
+  //     `https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+  //   );
 
-    this.setState({ users: resp.data, loading: false });
-  }
+  //   this.setState({ users: resp.data, loading: false });
+  // }
   userSearch = async (query) => {
     this.setState({ loading: true });
     const resp = await axios.get(
@@ -58,7 +58,12 @@ class App extends Component {
                   <NavBar title="GitHub User Searcher" />
                 </div>
                 <div>
-                  <div style={{ textAlign: "center", color: "red" }}>
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "red",
+                      padding: "1rem 0",
+                    }}>
                     {alert && <p>{this.state.alert.message}</p>}
                   </div>
                   <Search
