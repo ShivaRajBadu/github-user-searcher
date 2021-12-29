@@ -5,8 +5,12 @@ export default function Search(props) {
   const [query, setQuery] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.userSearch(query);
-    setQuery("");
+    if (query === "") {
+      props.setAlert("please enter something..", "light");
+    } else {
+      props.userSearch(query);
+      setQuery("");
+    }
   };
   return (
     <form onSubmit={handleSubmit}>

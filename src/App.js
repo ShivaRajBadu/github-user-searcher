@@ -11,6 +11,7 @@ class App extends Component {
   state = {
     users: [],
     loading: false,
+    alert: "",
   };
   async componentDidMount() {
     this.setState({ loading: true });
@@ -30,6 +31,10 @@ class App extends Component {
     this.setState({ users: resp.data.items, loading: false });
   };
 
+  setAlert = (msg, type) => {
+    console.log(msg, type);
+    this.setState({ alert: { message: msg, type: type } });
+  };
   render() {
     return (
       <>
@@ -53,7 +58,13 @@ class App extends Component {
                   <NavBar title="GitHub User Searcher" />
                 </div>
                 <div>
-                  <Search userSearch={this.userSearch} />
+                  <div style={{ textAlign: "center", color: "red" }}>
+                    {alert && <p>{this.state.alert.message}</p>}
+                  </div>
+                  <Search
+                    setAlert={this.setAlert}
+                    userSearch={this.userSearch}
+                  />
                   <Users
                     users={this.state.users}
                     loading={this.state.loading}
