@@ -1,38 +1,107 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200;1,300&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  background-color: rgb(13, 24, 43);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.navbar {
+  padding: 0.7rem 2rem;
+  box-shadow: 5px 5px 5px rgb(5, 10, 17);
+  color: #ffff;
+  border-radius: 5px;
+}
+.showcase {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 3rem 1rem;
+}
+.card {
+  padding: 0.5rem 0.5rem 2rem 0.5rem;
   text-align: center;
+  box-shadow: 5px 5px 5px #0d0f14;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card img {
+  max-width: 100px;
+  border-radius: 50%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card h3 {
+  color: rgb(204, 54, 92);
+  text-transform: capitalize;
+  margin: 0.5rem 0 2rem 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #2d58c5;
+  background-color: #2d58c5;
+  color: #ffff;
+  text-decoration: none;
 }
-
-.App-link {
-  color: #61dafb;
+.btn:hover,
+.btn:focus {
+  color: rgba(255, 255, 255, 0.548);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search {
+  display: block;
+  padding: 0.8rem 1rem;
+  width: 90%;
+  margin: 1.5rem auto;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(135, 192, 194);
+  color: rgb(17, 15, 15);
+  font-size: 1.4rem;
+  outline: none;
+}
+.search-button {
+  display: block;
+  width: 90%;
+  padding: 0.6rem;
+  font-size: 1.5rem;
+  margin: 1.5rem auto 2rem auto;
+  text-transform: capitalize;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.search-button:hover {
+  color: rgba(255, 255, 255, 0.705);
+}
+.avatar {
+  margin-top: 2rem;
+  border-radius: 5px;
+}
+.name {
+  padding: 0.5rem 0;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.bio {
+  padding: 0.5rem 0;
+  max-width: 450px;
+}
+.repo {
+  color: cadetblue;
+  text-transform: capitalize;
+  font-size: 2rem;
+  padding: 0.2rem 0;
+}
+.link {
+  color: darkgreen;
+  font-size: 1.3rem;
+  box-shadow: 1px 1px 1px 1px #505950;
+  padding: 1rem;
 }
